@@ -42,20 +42,31 @@ if (isNaN(people) || people < 1) {
 
 //Calculate the amount if tip each person needs to pay
 
-var tipPerPerson = (amount * service) / people
+var tipPerPerson = (amount * service) / people;
+
+var totalPerPerson = amount / people + tipPerPerson;
 
 tipPerPerson = tipPerPerson.toFixed(2); //Round the tip per person to 2 decimal places
 
-console.log(tipPerPerson);
+totalPerPerson.toFixed(2);
 
 //Display that information to the user
 
 document.getElementById("tipAmount").style.display = "block"; //Display the hidden tipAmount div when we're ready to show the calculated tip
 document.getElementById("tip").innerText = tipPerPerson;
+document.getElementById("total").innerText = totalPerPerson;
+}
+
+function reset() {
+    document.getElementById("tipAmount").style.display = "none";
 }
 
 //Function that is executed when the button is clicked
 //We are passing an anoymous function (a function without a name to the button's onclick handler when it's clikced)
 document.getElementById("calculateTip").onclick = function() {
     calculateTip();
+}
+
+document.getElementById("reset").onclick = function() {
+    reset();
 }
