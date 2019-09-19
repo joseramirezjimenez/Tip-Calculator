@@ -1,5 +1,5 @@
 body {
-    background-color: linear-gradient(to right #d8fed8, #9381A7) ;
+    background: linear-gradient(to right,rgb(243, 39, 3),rgba(219, 130, 13, 0.829),rgb(255, 136, 0));
 }
 
 #container {
@@ -28,13 +28,33 @@ p {
     padding-left: 20px;
 }
 
-#billAmt {
+#billAmt, #serviceQual, #numPeople { /* Elements with the ID of billAmt and serviceQual will both receive these styles */
     margin-left: 20px;
     font-size: 14px;
 }
 
-#billAmt:focus {
+#billAmt:focus, #serviceQual:focus {
     border: 3px solid orange;
+    outline: none;
+}
+
+button {
+    display: block;
+    margin: 30px auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+    font-size: 20pt;
+    background-color: orange;
+    color: white;
+}
+
+button:hover {
+    background-color: black;
+}
+
+button:focus {
     outline: none;
 }
 
